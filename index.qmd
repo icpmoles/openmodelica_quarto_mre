@@ -1,0 +1,30 @@
+---
+title: openmodelica_quarto
+authors:
+  - name: Norah Jones
+    affiliation: The University
+    roles: writing
+    corresponding: true
+bibliography: references.bib
+---
+
+## Section
+This is a simple placeholder for the manuscript's main document [@knuth84].
+
+
+```{julia}
+import Pkg; Pkg.add("OMJulia")
+using OMJulia
+using OMJulia.API: API
+```
+
+Calling `OMCSession` hangs the render/preview but works normally when running the cell from VS Code
+```{julia}
+omc = OMJulia.OMCSession();
+```
+
+
+The following cell is never exucuted:
+```{julia}
+installDir = sendExpression(mod, "getInstallationDirectoryPath()")
+```
