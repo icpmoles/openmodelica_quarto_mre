@@ -1,11 +1,6 @@
 ---
 title: openmodelica_quarto
-authors:
-  - name: Norah Jones
-    affiliation: The University
-    roles: writing
-    corresponding: true
-bibliography: references.bib
+engine: Julia
 ---
 
 ## Section
@@ -13,7 +8,7 @@ This is a simple placeholder for the manuscript's main document [@knuth84].
 
 
 ```{julia}
-import Pkg; Pkg.add("OMJulia")
+#import Pkg; Pkg.add("OMJulia")
 using OMJulia
 using OMJulia.API: API
 ```
@@ -26,5 +21,5 @@ omc = OMJulia.OMCSession();
 
 The following cell is never exucuted:
 ```{julia}
-installDir = sendExpression(mod, "getInstallationDirectoryPath()")
+installDir = sendExpression(omc, "getInstallationDirectoryPath()")
 ```
